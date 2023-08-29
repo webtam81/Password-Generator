@@ -200,13 +200,16 @@ function getPasswordOptions() {
 
 // Function for getting a random element from an array
 function getRandom(arr) {
- let randomElement = arr[Math.floor(Math.random() * arr.length)];
- return randomElement;
+  let randomElement = arr[Math.floor(Math.random() * arr.length)];
+  return randomElement;
 }
 
 // Function to generate password with user input
 function generatePassword() {
   //return 'password'; //TODO rm
+  //merge arrays
+  //set var to char lenth
+  //for var,  generate random char, add to string.
 }
 
 // Get references to the #generate element
@@ -232,6 +235,6 @@ console.log(`Numbers: ${numbersYN}`); //TODO rm
 console.log(`Special characters: ${specialCharsYN}`); //TODO rm
 
 
-getRandom(upperCasedCharacters);
+console.log(getRandom(upperCasedCharacters));
 //let randomElement = upperCasedCharacters[Math.floor(Math.random() * upperCasedCharacters.length)];
 //console.log(randomElement);
