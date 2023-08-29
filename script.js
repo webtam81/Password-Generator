@@ -223,7 +223,12 @@ function generatePassword() {
   }
   console.log(passwordChars);
   //set var to char lenth
-  //for var,  generate random char, add to string.
+
+  let finalPass = '';
+  for (let p = 0; p < passLength; p++) {
+    finalPass = finalPass + getRandom(passwordChars);
+    console.log(finalPass);
+  }
 
 }
 
@@ -246,10 +251,10 @@ getPasswordOptions();
 generatePassword();
 
 console.log(`Password Length: ${passLength}`); //TODO rm
-console.log(`Lower case letters: ${lowerCaseYN}`); //TODO rm
-console.log(`Upper case letters: ${upperCaseYN}`); //TODO rm
-console.log(`Numbers: ${numbersYN}`); //TODO rm
-console.log(`Special characters: ${specialCharsYN}`); //TODO rm
+//console.log(`Lower case letters: ${lowerCaseYN}`); //TODO rm
+//console.log(`Upper case letters: ${upperCaseYN}`); //TODO rm
+//console.log(`Numbers: ${numbersYN}`); //TODO rm
+//console.log(`Special characters: ${specialCharsYN}`); //TODO rm
 
 
 console.log(getRandom(upperCasedCharacters));
