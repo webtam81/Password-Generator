@@ -202,6 +202,7 @@ function getRandom(arr) {
 
 // Function to generate password with user input
 function generatePassword() {
+  passwordChars = [];
   //merge arrays
   if (lowerCaseYN == 'y') {
     passwordChars = passwordChars.concat(lowerCasedCharacters);
@@ -229,6 +230,7 @@ var generateBtn = document.querySelector('#generate');
 
 // Write password to the #password input
 function writePassword() {
+  getPasswordOptions();
   var password = generatePassword();
   var passwordText = document.querySelector('#password');
 
@@ -237,7 +239,3 @@ function writePassword() {
 
 // Add event listener to generate button
 generateBtn.addEventListener('click', writePassword);
-
-//testing
-getPasswordOptions();
-console.log(generatePassword());
