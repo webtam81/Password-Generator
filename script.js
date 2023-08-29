@@ -104,14 +104,12 @@ function getPasswordOptions() {
   while (validPassLength === false && i < 10) {
     passLength = parseInt(prompt(`Please enter password legnth (from 10 to 64 characters)`));
     if (isNaN(passLength) || passLength < 10 || passLength > 64) {
-      console.log(`Not a valid password length, please try again.`); //TODO change to alert
+      alert(`Not a valid password length, please try again.`);
     }
     else {
       validPassLength = true;
     }
     i++
-    console.log(`Password Length: ${passLength}`); //TODO rm
-    console.log(`i: ${i}`); //TODO rm
   }
 
   let chosenOptions = 0;
@@ -130,9 +128,9 @@ function getPasswordOptions() {
       } else if (lowerCaseYN.toLowerCase() == 'n' ||  lowerCaseYN.toLowerCase() == 'no') {
         lowerCaseYN = 'n';
       } else {
-        console.log(`Please select 'Y' or 'N'`); //TODO alert
-        console.log(`j: ${j}`); //TODO rm
+        alert(`You have entered an incorrect value. Please enter 'Y' or 'N' only.`);
       }
+      console.log(`j: ${j}`); //TODO rm
       j++
     }
 
@@ -148,9 +146,9 @@ function getPasswordOptions() {
         } else if (upperCaseYN.toLowerCase() == 'n' ||  upperCaseYN.toLowerCase() == 'no') {
           upperCaseYN = 'n';
         } else {
-          console.log(`Please select 'Y' or 'N'`); //TODO alert
-          console.log(`k: ${k}`); //TODO rm
+          alert(`You have entered an incorrect value. Please enter 'Y' or 'N' only.`);
         }
+        console.log(`k: ${k}`); //TODO rm
         k++;
       }
 
@@ -159,16 +157,16 @@ function getPasswordOptions() {
       numbersYN = '';
 
       while (numbersYN !== 'y' && numbersYN !== 'n' && l < 10) {
-        numbersYN = prompt(`Do you want uppercase letters in your password?\nType 'Y' for 'Yes' or 'N' for 'No'.`);
+        numbersYN = prompt(`Do you want numbers in your password?\nType 'Y' for 'Yes' or 'N' for 'No'.`);
         if (numbersYN.toLowerCase() == 'y' || numbersYN.toLowerCase() == 'yes') {
           numbersYN = 'y';
           chosenOptions++;
         } else if (numbersYN.toLowerCase() == 'n' ||  numbersYN.toLowerCase() == 'no') {
           numbersYN = 'n';
         } else {
-          console.log(`Please select 'Y' or 'N'`); //TODO alert
-          console.log(`l: ${l}`); //TODO rm
+          alert(`You have entered an incorrect value. Please enter 'Y' or 'N' only.`);
         }
+        console.log(`l: ${l}`); //TODO rm
         l++;
       }    
 
@@ -177,20 +175,24 @@ function getPasswordOptions() {
       specialCharsYN = '';
 
       while (specialCharsYN !== 'y' && specialCharsYN !== 'n' && m < 10) {
-        specialCharsYN = prompt(`Do you want uppercase letters in your password?\nType 'Y' for 'Yes' or 'N' for 'No'.`);
+        specialCharsYN = prompt(`Do you want special characters (symbols) in your password?\nType 'Y' for 'Yes' or 'N' for 'No'.`);
         if (specialCharsYN.toLowerCase() == 'y' || specialCharsYN.toLowerCase() == 'yes') {
           specialCharsYN = 'y';
           chosenOptions++
         } else if (specialCharsYN.toLowerCase() == 'n' ||  specialCharsYN.toLowerCase() == 'no') {
           specialCharsYN = 'n';
         } else {
-          console.log(`Please select 'Y' or 'N'`); //TODO alert
-          console.log(`m: ${m}`); //TODO rm
+          alert(`You have entered an incorrect value. Please enter 'Y' or 'N' only.`);
         }
+        console.log(`m: ${m}`); //TODO rm
         m++;
       } 
-      console.log(`Number of character types: ${chosenOptions}`); //rm
-      console.log(`n: ${n}`); //rm
+
+      if (chosenOptions == 0) {
+        alert(`You must select at least one character type. Please try again.`); 
+      }
+
+      console.log(`n: ${n}`); //TODO rm
     n++;
     
   }
@@ -225,10 +227,10 @@ generateBtn.addEventListener('click', writePassword);
 
 getPasswordOptions();
 
-console.log(`Password Length: ${passLength}`); //rm
-console.log(`Lower case letters: ${lowerCaseYN}`); //rm
-console.log(`Upper case letters: ${upperCaseYN}`); //rm
-console.log(`Numbers: ${numbersYN}`); //rm
-console.log(`Special characters: ${specialCharsYN}`); //rm
+console.log(`Password Length: ${passLength}`); //TODO rm
+console.log(`Lower case letters: ${lowerCaseYN}`); //TODO rm
+console.log(`Upper case letters: ${upperCaseYN}`); //TODO rm
+console.log(`Numbers: ${numbersYN}`); //TODO rm
+console.log(`Special characters: ${specialCharsYN}`); //TODO rm
 
 
