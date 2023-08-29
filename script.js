@@ -93,11 +93,21 @@ let passLength = 0;
 
 // Function to prompt user for password options
 function getPasswordOptions() {
-  passLength = parseInt(prompt(`Please enter password legnth (from 10 to 64 characters)`));
-  if (isNaN(passLength) || passLength < 10 || passLength > 64) {
-    console.log(`Not a valid password length, please try again.`)
+  let validPassLength = false;
+
+  while (validPassLength === false) {
+    passLength = parseInt(prompt(`Please enter password legnth (from 10 to 64 characters)`));
+    if (isNaN(passLength) || passLength < 10 || passLength > 64) {
+      console.log(`Not a valid password length, please try again.`); //TODO change to alert
+    }
+    else {
+      validPassLength = true;
+    }
+    console.log(`${passLength}`); //TODO rm
   }
-  console.log(`${passLength}`);
+
+
+    
 }
 
 // Function for getting a random element from an array
@@ -125,6 +135,18 @@ function writePassword() {
 generateBtn.addEventListener('click', writePassword);
 
 //testing
+//TODO - array of valid YN answers
+
 getPasswordOptions();
 
 console.log(passLength); //rm
+
+let lowerCaseYN = prompt(`Do you want lowercase letters in your password?\nType 'Y' for 'Yes' or 'N' for 'No'.`);
+
+if (lowerCaseYN.toLowerCase() !== "y" || lowerCaseYN.toLowerCase() !== "yes" || lowerCaseYN.toLowerCase() !== "n" ||  lowerCaseYN.toLowerCase() !== "n") {
+  console.log(`Please select 'Y' or 'N'`);
+} else {
+  lowerCaseYN = true;
+}
+
+console.log(lowerCaseYN);
