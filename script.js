@@ -1,5 +1,5 @@
 // Array of special characters to be included in password
-var specialCharacters = [
+const specialCharacters = [
   '@',
   '%',
   '+',
@@ -26,10 +26,10 @@ var specialCharacters = [
 ];
 
 // Array of numeric characters to be included in password
-var numericCharacters = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
+const numericCharacters = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
 
 // Array of lowercase characters to be included in password
-var lowerCasedCharacters = [
+const lowerCasedCharacters = [
   'a',
   'b',
   'c',
@@ -59,7 +59,7 @@ var lowerCasedCharacters = [
 ];
 
 // Array of uppercase characters to be included in password
-var upperCasedCharacters = [
+const upperCasedCharacters = [
   'A',
   'B',
   'C',
@@ -88,9 +88,16 @@ var upperCasedCharacters = [
   'Z'
 ];
 
+//variables for use across functions
+let passLength = 0;
+
 // Function to prompt user for password options
 function getPasswordOptions() {
-
+  passLength = prompt(`Please enter password legnth (from 10 to 64 characters)`);
+  if (passLength < 10 || passLength > 64) {
+    console.log(`not a valid number, please try again`)
+  }
+  console.log(`${passLength}`);
 }
 
 // Function for getting a random element from an array
@@ -116,3 +123,6 @@ function writePassword() {
 
 // Add event listener to generate button
 generateBtn.addEventListener('click', writePassword);
+
+//testing
+getPasswordOptions();
