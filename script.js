@@ -93,7 +93,7 @@ let passLength = 0;
 
 // Function to prompt user for password options
 function getPasswordOptions() {
-  passLength = prompt(`Please enter password legnth (from 10 to 64 characters)`);
+  passLength = parseInt(prompt(`Please enter password legnth (from 10 to 64 characters)`));
   if (passLength < 10 || passLength > 64) {
     console.log(`not a valid number, please try again`)
   }
@@ -126,3 +126,5 @@ generateBtn.addEventListener('click', writePassword);
 
 //testing
 getPasswordOptions();
+
+console.log(typeof passLength);
