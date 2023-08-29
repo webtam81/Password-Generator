@@ -120,6 +120,7 @@ function getPasswordOptions() {
 
     //Option to include lowercase letters
     let j = 0;
+    lowerCaseYN = '';
 
     while (lowerCaseYN !== 'y' && lowerCaseYN !== 'n' && j < 10) {
       lowerCaseYN = prompt(`Do you want lowercase letters in your password?\nType 'Y' for 'Yes' or 'N' for 'No'.`);
@@ -137,6 +138,7 @@ function getPasswordOptions() {
 
       //Option to include uppercase letters
       let k = 0;
+      upperCaseYN = '';
 
       while (upperCaseYN !== 'y' && upperCaseYN !== 'n' && k < 10) {
         upperCaseYN = prompt(`Do you want uppercase letters in your password?\nType 'Y' for 'Yes' or 'N' for 'No'.`);
@@ -154,6 +156,7 @@ function getPasswordOptions() {
 
       //Option to include numbers
       let l = 0;
+      numbersYN = '';
 
       while (numbersYN !== 'y' && numbersYN !== 'n' && l < 10) {
         numbersYN = prompt(`Do you want uppercase letters in your password?\nType 'Y' for 'Yes' or 'N' for 'No'.`);
@@ -171,6 +174,7 @@ function getPasswordOptions() {
 
       //Option to include special characters
       let m = 0;
+      specialCharsYN = '';
 
       while (specialCharsYN !== 'y' && specialCharsYN !== 'n' && m < 10) {
         specialCharsYN = prompt(`Do you want uppercase letters in your password?\nType 'Y' for 'Yes' or 'N' for 'No'.`);
