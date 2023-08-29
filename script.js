@@ -91,6 +91,9 @@ const upperCasedCharacters = [
 //variables for use across functions
 let passLength = 0;
 let lowerCaseYN;
+let upperCaseYN;
+let numbersYN;
+let specialCharsYN;
 
 // Function to prompt user for password options
 function getPasswordOptions() {
@@ -111,25 +114,82 @@ function getPasswordOptions() {
     console.log(`i: ${i}`); //TODO rm
   }
 
-  //Lowercase letters
-  let j = 0;
+  let chosenOptions = 0;
+  let n = 0;
+  while (chosenOptions < 1 && n < 10) {
 
-  while (lowerCaseYN !== 'y' && lowerCaseYN !== 'n' && j < 10) {
-    lowerCaseYN = prompt(`Do you want lowercase letters in your password?\nType 'Y' for 'Yes' or 'N' for 'No'.`);
-    if (lowerCaseYN.toLowerCase() == 'y' || lowerCaseYN.toLowerCase() == 'yes') {
-      lowerCaseYN = 'y';
-    } else if (lowerCaseYN.toLowerCase() == 'n' ||  lowerCaseYN.toLowerCase() == 'no') {
-      lowerCaseYN = 'n';
-    } else {
-      console.log(`Please select 'Y' or 'N'`); //TODO alert
-      console.log(`j: ${j}`); //TODO rm
+    //Option to include lowercase letters
+    let j = 0;
+
+    while (lowerCaseYN !== 'y' && lowerCaseYN !== 'n' && j < 10) {
+      lowerCaseYN = prompt(`Do you want lowercase letters in your password?\nType 'Y' for 'Yes' or 'N' for 'No'.`);
+      if (lowerCaseYN.toLowerCase() == 'y' || lowerCaseYN.toLowerCase() == 'yes') {
+        lowerCaseYN = 'y';
+        chosenOptions++;
+      } else if (lowerCaseYN.toLowerCase() == 'n' ||  lowerCaseYN.toLowerCase() == 'no') {
+        lowerCaseYN = 'n';
+      } else {
+        console.log(`Please select 'Y' or 'N'`); //TODO alert
+        console.log(`j: ${j}`); //TODO rm
+      }
+      j++
     }
-    j++
-  }
 
-  //
+      //Option to include uppercase letters
+      let k = 0;
 
+      while (upperCaseYN !== 'y' && upperCaseYN !== 'n' && k < 10) {
+        upperCaseYN = prompt(`Do you want uppercase letters in your password?\nType 'Y' for 'Yes' or 'N' for 'No'.`);
+        if (upperCaseYN.toLowerCase() == 'y' || upperCaseYN.toLowerCase() == 'yes') {
+          upperCaseYN = 'y';
+          chosenOptions++;
+        } else if (upperCaseYN.toLowerCase() == 'n' ||  upperCaseYN.toLowerCase() == 'no') {
+          upperCaseYN = 'n';
+        } else {
+          console.log(`Please select 'Y' or 'N'`); //TODO alert
+          console.log(`k: ${k}`); //TODO rm
+        }
+        k++;
+      }
+
+      //Option to include numbers
+      let l = 0;
+
+      while (numbersYN !== 'y' && numbersYN !== 'n' && l < 10) {
+        numbersYN = prompt(`Do you want uppercase letters in your password?\nType 'Y' for 'Yes' or 'N' for 'No'.`);
+        if (numbersYN.toLowerCase() == 'y' || numbersYN.toLowerCase() == 'yes') {
+          numbersYN = 'y';
+          chosenOptions++;
+        } else if (numbersYN.toLowerCase() == 'n' ||  numbersYN.toLowerCase() == 'no') {
+          numbersYN = 'n';
+        } else {
+          console.log(`Please select 'Y' or 'N'`); //TODO alert
+          console.log(`l: ${l}`); //TODO rm
+        }
+        l++;
+      }    
+
+      //Option to include special characters
+      let m = 0;
+
+      while (specialCharsYN !== 'y' && specialCharsYN !== 'n' && m < 10) {
+        specialCharsYN = prompt(`Do you want uppercase letters in your password?\nType 'Y' for 'Yes' or 'N' for 'No'.`);
+        if (specialCharsYN.toLowerCase() == 'y' || specialCharsYN.toLowerCase() == 'yes') {
+          specialCharsYN = 'y';
+          chosenOptions++
+        } else if (specialCharsYN.toLowerCase() == 'n' ||  specialCharsYN.toLowerCase() == 'no') {
+          specialCharsYN = 'n';
+        } else {
+          console.log(`Please select 'Y' or 'N'`); //TODO alert
+          console.log(`m: ${m}`); //TODO rm
+        }
+        m++;
+      } 
+      console.log(`Number of character types: ${chosenOptions}`); //rm
+      console.log(`n: ${n}`); //rm
+    n++;
     
+  }
 }
 
 // Function for getting a random element from an array
@@ -161,17 +221,10 @@ generateBtn.addEventListener('click', writePassword);
 
 getPasswordOptions();
 
-console.log(passLength); //rm
+console.log(`Password Length: ${passLength}`); //rm
+console.log(`Lower case letters: ${lowerCaseYN}`); //rm
+console.log(`Upper case letters: ${upperCaseYN}`); //rm
+console.log(`Numbers: ${numbersYN}`); //rm
+console.log(`Special characters: ${specialCharsYN}`); //rm
 
 
-
-console.log(`lowercaseRN: ${lowerCaseYN}`);
-
-if (lowerCaseYN !== 'y') {
-  console.log(`lowercaseRN is not equal to y`);
-}
-if (lowerCaseYN !== 'n') {
-  console.log(`lowercaseRN is not equal to n`);
-}
-
-console.log('hello');
