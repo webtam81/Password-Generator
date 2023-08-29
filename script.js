@@ -90,12 +90,15 @@ const upperCasedCharacters = [
 
 //variables for use across functions
 let passLength = 0;
+let lowerCaseYN;
 
 // Function to prompt user for password options
 function getPasswordOptions() {
+  //Password length
   let validPassLength = false;
+  let i = 0;
 
-  while (validPassLength === false) {
+  while (validPassLength === false && i < 10) {
     passLength = parseInt(prompt(`Please enter password legnth (from 10 to 64 characters)`));
     if (isNaN(passLength) || passLength < 10 || passLength > 64) {
       console.log(`Not a valid password length, please try again.`); //TODO change to alert
@@ -103,9 +106,28 @@ function getPasswordOptions() {
     else {
       validPassLength = true;
     }
-    console.log(`${passLength}`); //TODO rm
+    i++
+    console.log(`Password Length: ${passLength}`); //TODO rm
+    console.log(`i: ${i}`); //TODO rm
   }
 
+  //Lowercase letters
+  let j = 0;
+
+  while (lowerCaseYN !== 'y' && lowerCaseYN !== 'n' && j < 10) {
+    lowerCaseYN = prompt(`Do you want lowercase letters in your password?\nType 'Y' for 'Yes' or 'N' for 'No'.`);
+    if (lowerCaseYN.toLowerCase() == 'y' || lowerCaseYN.toLowerCase() == 'yes') {
+      lowerCaseYN = 'y';
+    } else if (lowerCaseYN.toLowerCase() == 'n' ||  lowerCaseYN.toLowerCase() == 'no') {
+      lowerCaseYN = 'n';
+    } else {
+      console.log(`Please select 'Y' or 'N'`); //TODO alert
+      console.log(`j: ${j}`); //TODO rm
+    }
+    j++
+  }
+
+  //
 
     
 }
@@ -141,12 +163,15 @@ getPasswordOptions();
 
 console.log(passLength); //rm
 
-let lowerCaseYN = prompt(`Do you want lowercase letters in your password?\nType 'Y' for 'Yes' or 'N' for 'No'.`);
 
-if (lowerCaseYN.toLowerCase() !== "y" || lowerCaseYN.toLowerCase() !== "yes" || lowerCaseYN.toLowerCase() !== "n" ||  lowerCaseYN.toLowerCase() !== "n") {
-  console.log(`Please select 'Y' or 'N'`);
-} else {
-  lowerCaseYN = true;
+
+console.log(`lowercaseRN: ${lowerCaseYN}`);
+
+if (lowerCaseYN !== 'y') {
+  console.log(`lowercaseRN is not equal to y`);
+}
+if (lowerCaseYN !== 'n') {
+  console.log(`lowercaseRN is not equal to n`);
 }
 
-console.log(lowerCaseYN);
+console.log('hello');
