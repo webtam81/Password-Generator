@@ -94,6 +94,7 @@ let lowerCaseYN;
 let upperCaseYN;
 let numbersYN;
 let specialCharsYN;
+let passwordChars = [];
 
 // Function to prompt user for password options
 function getPasswordOptions() {
@@ -208,8 +209,22 @@ function getRandom(arr) {
 function generatePassword() {
   //return 'password'; //TODO rm
   //merge arrays
+  if (lowerCaseYN == 'y') {
+    passwordChars = passwordChars.concat(lowerCasedCharacters);
+  }
+  if (upperCaseYN == 'y') {
+    passwordChars = passwordChars.concat(upperCasedCharacters);
+  }
+  if (numbersYN == 'y') {
+    passwordChars = passwordChars.concat(numericCharacters);
+  }
+  if (specialCharsYN == 'y') {
+    passwordChars = passwordChars.concat(specialCharacters);
+  }
+  console.log(passwordChars);
   //set var to char lenth
   //for var,  generate random char, add to string.
+
 }
 
 // Get references to the #generate element
@@ -227,6 +242,8 @@ function writePassword() {
 generateBtn.addEventListener('click', writePassword);
 
 //testing
+getPasswordOptions();
+generatePassword();
 
 console.log(`Password Length: ${passLength}`); //TODO rm
 console.log(`Lower case letters: ${lowerCaseYN}`); //TODO rm
