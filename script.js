@@ -200,12 +200,13 @@ function getPasswordOptions() {
 
 // Function for getting a random element from an array
 function getRandom(arr) {
-
+ let randomElement = arr[Math.floor(Math.random() * arr.length)];
+ return randomElement;
 }
 
 // Function to generate password with user input
 function generatePassword() {
-
+  //return 'password'; //TODO rm
 }
 
 // Get references to the #generate element
@@ -223,9 +224,6 @@ function writePassword() {
 generateBtn.addEventListener('click', writePassword);
 
 //testing
-//TODO - array of valid YN answers
-
-getPasswordOptions();
 
 console.log(`Password Length: ${passLength}`); //TODO rm
 console.log(`Lower case letters: ${lowerCaseYN}`); //TODO rm
@@ -234,3 +232,6 @@ console.log(`Numbers: ${numbersYN}`); //TODO rm
 console.log(`Special characters: ${specialCharsYN}`); //TODO rm
 
 
+getRandom(upperCasedCharacters);
+//let randomElement = upperCasedCharacters[Math.floor(Math.random() * upperCasedCharacters.length)];
+//console.log(randomElement);
